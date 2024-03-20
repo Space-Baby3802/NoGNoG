@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: VoiceDone
+    m_ConditionEvent: LifeWagered
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2762201562810872477}
@@ -112,8 +112,8 @@ AnimatorController:
   m_Name: BigDoorSet
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: VoiceDone
-    m_Type: 4
+  - m_Name: LifeWagered
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

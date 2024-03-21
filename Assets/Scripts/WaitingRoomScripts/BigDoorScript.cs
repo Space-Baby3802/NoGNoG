@@ -14,9 +14,14 @@ public class BigDoorScript : MonoBehaviour
 
     }
 
-    public void OpenDoor()
+    public void OpenDoorLobby()
     {
         anim.SetTrigger("LifeWagered");
+        Aud1.Play();
+    }
+    public void OpenDoorCR()
+    {
+        anim.SetTrigger("CRPuzzleSolved");
         Aud1.Play();
     }
 

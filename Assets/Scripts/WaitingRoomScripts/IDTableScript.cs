@@ -41,7 +41,7 @@ public class IDTableScript : MonoBehaviour , ISelectable
     {
         IDSet.SetActive(true);
         LowerTable();
-        bigdoorscript.OpenDoor();
+        bigdoorscript.OpenDoorLobby();
     }
 
 

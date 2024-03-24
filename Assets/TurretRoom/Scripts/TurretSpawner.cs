@@ -18,7 +18,7 @@ public class TurretSpawner : MonoBehaviour
     void Update()
     {
         turretTimer += Time.deltaTime;
-        if (turretTimer >= 5f && turretCount < 10)
+        if (turretTimer >= 7f && turretCount < 10)
         {
             SpawnTurret();
             turretCount++;

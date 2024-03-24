@@ -9,7 +9,6 @@ public class TurretTargeting : MonoBehaviour
     [SerializeField] private LayerMask player;
 
     [SerializeField] private AudioSource turretActive;
-    [SerializeField] private GameObject muzzleCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,27 +26,12 @@ public class TurretTargeting : MonoBehaviour
                 Debug.DrawRay(rayShooter.position, Vector3.left, Color.cyan);
                 Debug.Log("I can see you!");
                 turretActive.Play();
-                if (turretActive.isPlaying)
-                {
-                    MuzzleFlash();
-                }
             }
             else
             {
               Debug.Log(hit.collider.gameObject.layer);
             }
         }
-    }
-
-    public void MuzzleFlash()
-    {
-        muzzleCanvas.SetActive(true);
-        MuzzleFlashOff();
-    }
-    public void MuzzleFlashOff()
-    {
-        muzzleCanvas?.SetActive(false);
-        MuzzleFlash();
     }
 
 

@@ -6,10 +6,10 @@ public class Target : MonoBehaviour
 {
     [SerializeField] private int counterNumber;
     [SerializeField] AnswerText answerScreenScript;
+    [SerializeField] AudioSource ding;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class Target : MonoBehaviour
         {
             Debug.Log("Hit by a bullet");
             answerScreenScript.currentNumber += counterNumber;
+            ding.Play();
         }
         else
         {

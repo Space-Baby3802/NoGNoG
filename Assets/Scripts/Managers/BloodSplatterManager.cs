@@ -35,5 +35,10 @@ public class BloodSplatterManager : MonoBehaviour
             deathCanvas.SetActive(true);
         }
 
+        if (timeInFrontOfTurret >= .51f)
+        {
+            timeInFrontOfTurret = 0.5f;
+        }
+
     }
 }

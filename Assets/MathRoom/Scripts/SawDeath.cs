@@ -18,14 +18,11 @@ public class SawDeath : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") && !isDead)
         {
-            isDead = true;
-            deathCanvas.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            BloodSplatterManager.timeInFrontOfTurret += Time.deltaTime;
         }
     }
 }

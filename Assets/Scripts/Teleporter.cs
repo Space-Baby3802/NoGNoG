@@ -20,14 +20,14 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerStay(Collider player)
     {
-        if (CompareTag("Player"))
+        if (player.CompareTag("Player"))
         {
             Debug.Log("Let's try again");
+            Player.transform.position = new Vector3(TeleportPoint.transform.position.x, TeleportPoint.transform.position.y, TeleportPoint.transform.position.z);
         }
         else
         {
             Debug.Log(player.transform.position);
-            Player.transform.position = new Vector3(TeleportPoint.transform.position.x, TeleportPoint.transform.position.y, TeleportPoint.transform.position.z);
         }
     }
 }

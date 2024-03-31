@@ -5,6 +5,7 @@ using UnityEngine;
 public class SawDeath : MonoBehaviour
 {
     [SerializeField] GameObject deathCanvas;
+    bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,12 @@ public class SawDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("player"))
+        if (other.CompareTag("Player") && !isDead)
         {
+            isDead = true;
             deathCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }

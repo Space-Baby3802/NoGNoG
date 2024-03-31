@@ -22,14 +22,17 @@ public class TurretTargeting : MonoBehaviour
     {
         if (Physics.Raycast(rayShooter.position, Vector3.left, out RaycastHit hit, 1000f))
         {
-            if (hit.collider.gameObject.layer == 8)
+            if (hit.collider.gameObject.layer == 8 && !BloodSplatterManager.isDead)
             {
                 Debug.DrawRay(rayShooter.position, Vector3.left, Color.cyan);
                 Debug.Log("I can see you!");
                 turretActive.Play();
                 BloodSplatterManager.bloodCount = 1;
                 BloodSplatterManager.bloodCount += BloodSplatterManager.bloodCount * 3 * Time.deltaTime;
-                BloodSplatterManager.timeInFrontOfTurret += Time.deltaTime;
+                if (BloodSplatterManager.timeInFrontOfTurret <= 0.51f)
+                {
+                    BloodSplatterManager.timeInFrontOfTurret += Time.deltaTime;
+                }
                 Debug.Log("In front of turret for: " + BloodSplatterManager.timeInFrontOfTurret);
             }
             else

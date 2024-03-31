@@ -6,6 +6,7 @@ public class PitDeath : MonoBehaviour
 {
     [SerializeField] private GameObject DeathChecker;
     AudioSource bonesCrunch;
+    bool hasDied;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,15 @@ public class PitDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DeathChecker.SetActive(true);
-        bonesCrunch.Play();
+        if (!hasDied && !other.CompareTag("Bullet"))
+        {
+            hasDied = true;
+            Debug.Log("PlayerFound");
+            DeathChecker.SetActive(true);
+            bonesCrunch.Play();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+       
     }
 }

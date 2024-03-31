@@ -19,7 +19,9 @@ public class BloodSplatterManager : MonoBehaviour
     {
         if (isDead)
         {
-            deathCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
         }
 
         BloodScreen.GetComponent<Image>().color = new Color(255, 255, 255, BloodSplatterManager.bloodCount / 2);
@@ -27,9 +29,10 @@ public class BloodSplatterManager : MonoBehaviour
         BloodScreenTwo.GetComponent<Image>().color = new Color(255, 255, 255, BloodSplatterManager.bloodCount);
         bloodCount -= bloodCount*Time.deltaTime;
 
-        if (timeInFrontOfTurret >= .5f)
+        if (timeInFrontOfTurret >= .5f && !isDead)
         {
             isDead = true;
+            deathCanvas.SetActive(true);
         }
 
     }

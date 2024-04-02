@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WaitingRoom/WaitingRoom.unity
     guid: bb5799bea8a9c374292e537000339c1e
+  - enabled: 1
+    path: Assets/VictoryCutscene.unity
+    guid: d0f3b5cad1024b84483caabe0421a11a
   m_configObjects: {}

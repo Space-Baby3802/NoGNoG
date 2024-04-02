@@ -13,6 +13,7 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] GameObject deathCanvas;
     [SerializeField] GameObject healthCanvas;
     [SerializeField] GameObject crosshairCanvas;
+    [SerializeField] CarMove carMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +37,6 @@ public class PlayerDeath : MonoBehaviour
         camPanAnim.SetTrigger("CharacterDiedCamera");
         fireBurn.Play();
         fireBurnParticles.Play();
+        carMove.isDead=true;
     }
 }

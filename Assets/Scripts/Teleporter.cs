@@ -25,7 +25,7 @@ public class Teleporter : MonoBehaviour
         {
             teleportTimer += Time.deltaTime;
             Debug.Log("Let's try again");
-            if (teleportTimer >= 1)
+            if (teleportTimer > 1)
             {
                 player.transform.position = new Vector3(TeleportPoint.transform.position.x, TeleportPoint.transform.position.y, TeleportPoint.transform.position.z);
             }

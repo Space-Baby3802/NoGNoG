@@ -11,6 +11,7 @@ public class TurretTargeting : MonoBehaviour
 
     [SerializeField] private AudioSource turretActive;
     [SerializeField] private GameObject DeathCanvas;
+    [SerializeField] private LineRenderer aimLine;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,9 @@ public class TurretTargeting : MonoBehaviour
     {
         if (Physics.Raycast(rayShooter.position, Vector3.left, out RaycastHit hit, 1000f))
         {
+            aimLine.enabled = true;
+            aimLine.SetPosition(0, rayShooter.position);
+            aimLine.SetPosition(1, hit.point);
             if (hit.collider.gameObject.layer == 8 && !BloodSplatterManager.isDead)
             {
                 Debug.DrawRay(rayShooter.position, Vector3.left, Color.cyan);

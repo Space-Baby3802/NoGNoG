@@ -16,18 +16,20 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Teleport timer is at {teleportTimer}");
+        
     }
 
     private void OnTriggerStay(Collider player)
     {
         if (player.CompareTag("Player"))
         {
+            Debug.Log($"Teleport timer is at {teleportTimer}");
             teleportTimer += Time.deltaTime;
-            Debug.Log("Let's try again");
-            if (teleportTimer > 1)
+            if (teleportTimer >= 1)
             {
+                Debug.Log("Teleport time");
                 player.transform.position = new Vector3(TeleportPoint.transform.position.x, TeleportPoint.transform.position.y, TeleportPoint.transform.position.z);
+                teleportTimer = 1;
             }
         }
         else
